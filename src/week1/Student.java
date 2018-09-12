@@ -1,4 +1,4 @@
-﻿package week1;
+package week1;
 
 public class Student {
 
@@ -84,12 +84,12 @@ public class Student {
         this.group = group;
     }
 
-    public String getInfo() {
+    public void getInfo() {
         // TODO:
-        return ("Name: " + name +
-                "\nID: " + id +
-                "\nGroup: " + group +
-                "\nEmail: " + email);
+        System.out.println("Name: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Group: " + group);
+        System.out.println("Email: " + email);
     }
 
 }

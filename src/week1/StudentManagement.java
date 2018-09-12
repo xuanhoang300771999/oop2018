@@ -1,8 +1,8 @@
-﻿package week1;
+package week1;
 
 
 public class StudentManagement {
-
+    public static int n = 6;
     // TODO: khai báo thuộc tính students là array chứa các đối tượng thuộc lớp Student (max. 100)
     public static Student students[] = new Student[100];
 
@@ -18,7 +18,6 @@ public class StudentManagement {
 
     static void studentsByGroup() {
         // TODO:
-        int n = 6;
         boolean[] check = new boolean[n];
         for (int i = 0; i < n; i++) {
             check[i] = true;
@@ -39,12 +38,11 @@ public class StudentManagement {
 
     static void removeStudent(String id) {
         // TODO:
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < n; i++) {
             if (students[i].getId() == id) {
-                students[i].setName(null);
-                students[i].setGroup(null);
-                students[i].setId(null);
-                students[i].setEmail(null);
+                for(int j = i; j < n - 1; j++)
+                    students[j] = students[j + 1];
+                n--;
             }
         }
     }
@@ -58,31 +56,31 @@ public class StudentManagement {
         students[0].setGroup("K62-CF");
 
         System.out.println(students[0].getName());
-        System.out.println(students[0].getInfo());
+        students[0].getInfo();
 
         System.out.println("____________________________________");
         System.out.println();
 
         students[1] = new Student();
-        System.out.println(students[1].getInfo());
+        students[1].getInfo();
 
         System.out.println("____________________________________");
         System.out.println();
 
         students[2] = new Student("Nguyen Lang Duong", "14081999", "langduong99nd@gmail.com");
-        System.out.println(students[2].getInfo());
+        students[2].getInfo();
 
         System.out.println("____________________________________");
         System.out.println();
 
-        students[3] = new Student();
-        students[3].setGroup("INT22041");
+        students[3] = new Student("INT22041");
+//        students[3].setGroup("INT22041");
 
-        students[4] = new Student();
-        students[4].setGroup("INT22042");
+        students[4] = new Student("INT22042");
+//        students[4].setGroup("INT22042");
 
-        students[5] = new Student(students[0]);
-        System.out.println(students[5].getInfo());
+        students[5] = new Student(students[0]); // coppy
+        students[5].getInfo();
 
         System.out.println("____________________________________");
         System.out.println();
@@ -95,6 +93,8 @@ public class StudentManagement {
         System.out.println();
         studentsByGroup();
         removeStudent("000");
+        System.out.println("______________________________________");
+        studentsByGroup();
 
     }
 }
