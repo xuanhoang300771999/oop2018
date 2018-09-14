@@ -1,4 +1,4 @@
-package week1;
+﻿package week1;
 
 
 public class StudentManagement {
@@ -8,11 +8,11 @@ public class StudentManagement {
 
     public static boolean sameGroup(Student s1, Student s2) {
         // TODO:
-        String group1 = s1.getGroup();
-        String group2 = s2.getGroup();
-        if (group1.equals(group2))
-            return true;
-        return false;
+        if (s1.getGroup() == null || s2.getGroup() == null) {
+            return false;
+        } else {
+            return (s1.getGroup().equals(s2.getGroup()));
+        }
         // xóa dòng này sau khi cài đặt
     }
 
@@ -24,7 +24,7 @@ public class StudentManagement {
         }
         for (int i = 0; i < n; i++) {
             if (check[i]) {
-                System.out.println(students[i].getGroup());
+                System.out.println("Lop: " + students[i].getGroup());
                 System.out.println(students[i].getName());
                 for (int j = i + 1; j < n; j++) {
                     if (sameGroup(students[i], students[j])) {
@@ -38,11 +38,15 @@ public class StudentManagement {
 
     static void removeStudent(String id) {
         // TODO:
-        for (int i = 0; i < n; i++) {
-            if (students[i].getId() == id) {
-                for(int j = i; j < n - 1; j++)
-                    students[j] = students[j + 1];
-                n--;
+        if (id == null)
+            System.out.println("ID khong hop le");
+        else {
+            for (int i = 0; i < n; i++) {
+                if (students[i].getId() == id) {
+                    for (int j = i; j < n - 1; j++)
+                        students[j] = students[j + 1];
+                    n--;
+                }
             }
         }
     }
@@ -73,28 +77,26 @@ public class StudentManagement {
         System.out.println("____________________________________");
         System.out.println();
 
-        students[3] = new Student("INT22041");
-//        students[3].setGroup("INT22041");
+        students[3] = new Student();
+        students[3].setGroup("INT22041");
 
-        students[4] = new Student("INT22042");
-//        students[4].setGroup("INT22042");
+        students[4] = new Student();
+        students[4].setGroup("INT22042");
 
-        students[5] = new Student(students[0]); // coppy
+        students[5] = new Student(students[0]);
         students[5].getInfo();
 
         System.out.println("____________________________________");
         System.out.println();
 
+        studentsByGroup();
         if (sameGroup(students[3], students[4]))
             System.out.println("Cùng lớp");
         else
             System.out.println("Khác lớp");
 
         System.out.println();
-        studentsByGroup();
         removeStudent("000");
         System.out.println("______________________________________");
-        studentsByGroup();
-
     }
 }

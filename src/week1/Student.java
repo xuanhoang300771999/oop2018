@@ -1,4 +1,6 @@
-package week1;
+﻿package week1;
+
+import javafx.scene.Group;
 
 public class Student {
 
@@ -78,10 +80,6 @@ public class Student {
         id = s.id;
         email = s.email;
         group = s.group;
-    }
-
-    public Student(String group) {
-        this.group = group;
     }
 
     public void getInfo() {
