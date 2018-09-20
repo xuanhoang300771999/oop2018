@@ -42,7 +42,7 @@ public class StudentManagement {
             System.out.println("ID khong hop le");
         else {
             for (int i = 0; i < n; i++) {
-                if (students[i].getId() == id) {
+                if (students[i].getId().equals(id)) {
                     for (int j = i; j < n - 1; j++)
                         students[j] = students[j + 1];
                     n--;
