@@ -1,6 +1,6 @@
-﻿package week1;
+package week1;
 
-import javafx.scene.Group;
+//import javafx.scene.Group;
 
 public class Student {
 
