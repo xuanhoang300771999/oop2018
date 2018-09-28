@@ -50,6 +50,9 @@ class Student {
         this.address = address;
     }
 
+    /**
+     * Xếp loại sinh viên
+     */
     public void rateStudent() {
         if (this.avgPoint > 9 && this.avgPoint <= 10)
             System.out.println("Excellent!!");
@@ -63,12 +66,20 @@ class Student {
             System.out.println("Bad!!");
     }
 
+    /**
+     * Kiểm tra sinh viên có phải học lại không
+     * true = học lại
+     */
     public boolean checkStudyAgain() {
         if (this.absent >= 3)
             return true;
         return false;
     }
 
+    /**
+     * kiểm tra sinh viên có được học bổng không
+     * true = có được học bổng
+     */
     public boolean checkschoolarship() {
         if (this.GPA >= 3.2)
             return true;
@@ -106,17 +117,26 @@ class Employee {
         this.absentOfYear = absentOfYear;
     }
 
+    /**
+     * tính tiền lương hàng tháng của nhân viên
+     */
     public double paySalary() {
         long result = (30 - this.absentOfMonth) * 120000;
         return result;
     }
 
+    /**
+     * Kiểm tra thưởng cuối năm
+     */
     public boolean checkBonus() {
         if (this.absentOfYear < 3)
             return true;
         return false;
     }
 
+    /**
+     * Kiểm tra thăng chức
+     */
     public boolean checkToPromote() {
         if (achievements > 2)
             return true;
@@ -160,6 +180,9 @@ class Company {
         this.address = address;
     }
 
+    /**
+     * Khởi tạo
+     */
     public Company(String name, String address, String kind, long moneyEarn, long moneyUse) {
         this.name = name;
         this.address = address;
@@ -168,12 +191,19 @@ class Company {
         this.moneyUse = moneyUse;
     }
 
+    /**
+     * Kiểm tra công ty lỗ vốn hay lãi
+     * true = lỗ vốn
+     */
     public boolean check() {
         if (moneyEarn - moneyUse < 0)
             return true;
         return false;
     }
 
+    /**
+     * In thông in
+     */
     public void PrintInfo() {
         System.out.println("Name of Company: " + this.name);
         System.out.println("Address of Company: " + this.address);
