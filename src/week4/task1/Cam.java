@@ -36,10 +36,4 @@ public class Cam extends HoaQua {
         System.out.println("So Luong cua Cam: " + soluong);
     }
 
-    public boolean BoiThu() {
-        if (soluong > 2000000)
-            return true;
-        return false;
-    }
-
 }

@@ -3,16 +3,22 @@ package week4.task2;
 public class Rectangle extends Shape {
     private double width = 1.0;
     private double length = 1.0;
-
+    //Phương thức khởi tạo không có tham số
     public Rectangle() {
 
     }
-
+    // Phương thức khởi tạo chiều dài và chiều rộng
     public Rectangle(double width, double legth) {
         this.width = width;
         this.length = legth;
     }
 
+    /**
+     * @param color
+     * @param filled
+     * @param width
+     * @param legth
+     */
     public Rectangle(String color, boolean filled, double width, double legth) {
         super(color, filled);
         this.width = width;
