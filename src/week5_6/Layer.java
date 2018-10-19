@@ -6,11 +6,13 @@ public class Layer extends Diagram{
     ArrayList<Shape> shapeList = new ArrayList<Shape>();
 
     public void deleteAllTriangle(){
-        for(int i = 0; i < shapeList.size(); i++){
-            if(shapeList.get(i) instanceof  Triangle)
-                shapeList.remove(i);
-            i--;
+        for (Shape type : shapeList) {
+            if(type instanceof Triangle)
+                shapeList.remove(type);
         }
+
+
+        
     }
 
 }

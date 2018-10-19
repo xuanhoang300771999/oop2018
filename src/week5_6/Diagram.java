@@ -6,7 +6,6 @@ public class Diagram  {
         for(int i = 0; i < layer.shapeList.size(); i++){
             if(layer.shapeList.get(i) instanceof  Circle)
                 layer.shapeList.remove(i);
-            i--;
         }
     }
 
@@ -25,6 +24,12 @@ public class Diagram  {
         layer.shapeList.add(new Rectangle(5.0, 6.0, "yellow", true , 1, 1));
         layer.shapeList.add(new Triangle(2.0,3.0,4.0, 5.0,6.0, "black", true));
         layer.shapeList.add(new Circle(3, 1,2, "red", true ));
+        toString(layer);
+        System.out.println("After delete Triangle!!");
+        layer.deleteAllTriangle();
+        toString(layer);
+        System.out.println("After delete Circle!!!!");
+        diagram.deleteAllCircle(layer);
         toString(layer);
     }
 }
