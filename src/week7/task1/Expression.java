@@ -1,4 +1,9 @@
 package week7.task1;
 
-public class Expression {
+public abstract class Expression {
+    public abstract String toString();
+
+    public int evaluate() {
+        return ((Numeral) this).getValue();
+    }
 }
